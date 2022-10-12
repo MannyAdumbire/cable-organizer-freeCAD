@@ -1,0 +1,26 @@
+# Rough snippet for selecting all outer edges of the organizer for fillet
+doc=App.getDocument('ring_clip_cable_organizer');
+edgeobjs=[]
+edgenames=[]
+for count,tedge in enumerate( doc.PolarPattern039.Shape.Edges ):
+    if( math.isclose(3.80, tedge.Length, rel_tol=1e-3) ):
+        edgeobjs.append( tedge ) 
+        edgenames.append( 'Edge' + str(count+1) ) 
+doc.getObject('PartDesign__Fillet001').Radius = 0.500000
+App.getDocument('ring_clip_cable_organizer').getObject('PartDesign__Fillet001').Base = (App.getDocument('ring_clip_cable_organizer').getObject('PolarPattern039'),edgenames[1::2])
+
+
+
+ myfillet=doc.Body004.newObject('PartDesign::Fillet')
+ # Gui.Selection.clearSelection()
+ # Gui.Selection.addSelection('ring_clip_cable_organizer','Part003','Body004.PartDesign__Fillet.')
+ Gui.ActiveDocument.setEdit(App.getDocument('ring_clip_cable_organizer').getObject('PartDesign__Fillet'), 0)
+ # Gui.Selection.clearSelection()
+ # Gui.Selection.addSelection('ring_clip_cable_organizer','Part003','Body004.PolarPattern039.Edge353',-58.644,14.0348,5.03991)
+ # Gui.Selection.clearSelection()
+ App.getDocument('ring_clip_cable_organizer').getObject('PartDesign__Fillet').Radius = 0.500000
+ App.getDocument('ring_clip_cable_organizer').getObject('PartDesign__Fillet').Base = (App.getDocument('ring_clip_cable_organizer').getObject('PolarPattern039'),["Edge353",])
+ App.getDocument('ring_clip_cable_organizer').recompute()
+ App.getDocument('ring_clip_cable_organizer').getObject('PolarPattern039').Visibility = False
+ Gui.getDocument('ring_clip_cable_organizer').resetEdit()
+ 
