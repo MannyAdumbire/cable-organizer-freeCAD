@@ -2,12 +2,16 @@
 doc=App.getDocument('ring_clip_cable_organizer');
 edgeobjs=[]
 edgenames=[]
-for count,tedge in enumerate( doc.PolarPattern039.Shape.Edges ):
-    if( math.isclose(3.80, tedge.Length, rel_tol=1e-3) ):
-        edgeobjs.append( tedge ) 
-        edgenames.append( 'Edge' + str(count+1) ) 
-doc.getObject('PartDesign__Fillet001').Radius = 0.500000
-App.getDocument('ring_clip_cable_organizer').getObject('PartDesign__Fillet001').Base = (App.getDocument('ring_clip_cable_organizer').getObject('PolarPattern039'),edgenames[1::2])
+for count,tedge in enumerate( doc.Body.Shape.Edges ):
+    if( math.isclose(8.0, tedge.Length, rel_tol=1e-3) ):
+        edgeobjs.append( tedge )
+        edgenames.append( 'Edge' + str(count+1) )
+
+myfillet=doc.Body.newObject('PartDesign::Fillet')
+doc.getObject(myfillet.Label).Radius = 0.500000
+doc.getObject(myfillet.Label).Base = (doc.getObject('LinearPattern'),edgenames )
+
+# doc.getObject('PartDesign__Fillet001').Base = (App.getDocument('ring_clip_cable_organizer').getObject('PolarPattern039'),edgenames[1::2])
 
 
 
