@@ -7,11 +7,15 @@
 
 [cable-connectable-M.stl](cable-connectable-M.stl)
 
-[cable-connecable-L.stl](cable-connecable-L.stl)
+[cable-connectable-L.stl](cable-connectable-L.stl)
 
 [cable-connectable-XL.stl](cable-connectable-XL.stl)
 
 [ring-clip-cable-organizer-wire-organizer-mixed-sizes-ring-slot.stl](ring-clip-cable-organizer-wire-organizer-mixed-sizes-ring-slot.stl)
+
+## Scripts
+
+The (incomplete) script snippets in `Fillet-outer-holes.FCMacro` can help speed up the process of applying fillet to round the edges of the cable grooves.
 
 
 
