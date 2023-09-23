@@ -21,4 +21,4 @@ The (incomplete) script snippets in `Fillet-outer-holes.FCMacro` can help speed 
 
 
 ## Credits
-Connector Uses (PrintABlok Base Set)[https://www.3dpprofessor.com/product/printablok-base-set-free/] by Joseph Larson, 3D Printing Professor
+Connector Uses [PrintABlok Base Set](https://www.3dpprofessor.com/product/printablok-base-set-free/) by Joseph Larson, 3D Printing Professor
