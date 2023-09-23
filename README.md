@@ -1,5 +1,5 @@
 # Cable Organizer
-[Blog at mannysmesh.com](https://mannysmesh.com)
+[Blog at mannycrafts.com](https://mannycrafts.com)
 
 
 ## Models
